@@ -10,7 +10,7 @@ let dog = {
 console.log(dog.name);
 dog.eat("고구마");
 
-dog["eat"]("고구마"); // 대괄호 표기법을 쓸때는 따옴표를 널어야 한다.
+dog["eat"]("고구마"); // 대괄호 표기법을 쓸때는 따옴표를 넣어야 한다.
 console.log(dog['name']);
 
 let obj = {
