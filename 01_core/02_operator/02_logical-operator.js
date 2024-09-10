@@ -25,4 +25,5 @@ num%2 == 0 || console.log("홀수입니다.") // 오아는 둘중 하나가 참�
 let obj = null;
 //객체라고 기대하는 변수가 null 또는 undefined 일 때
 
-let val = obj && obj.value;
+let val = obj && obj.value; // let val = obj.value; 이것은 오류가 난다. 그러나 && 를 사용하여 작동시켜 예외 처리를 할 수 있도록 한다. // let val = obj?.value; ? 사용도 가능하다.
+
