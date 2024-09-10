@@ -6,7 +6,7 @@ let dog = {
     //    console.log(`${this.name}은(는) ${food}을(를) 맛있게 먹어요`);
     //}
 
-    est : (food) =>{
+    eat : (name, food) =>{ // 매개변수로 받아라 this 못쓴다.
         console.log(`${name}은(는) ${food}을(를) 맛있게 먹어요`);
     }
 }

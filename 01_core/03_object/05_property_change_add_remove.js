@@ -19,4 +19,4 @@ console.log(dog);
 delete dog.age;
 console.log(dog);
 delete dog.age;
-console.log(dog);
+console.log(dog); // 무시 됐다.

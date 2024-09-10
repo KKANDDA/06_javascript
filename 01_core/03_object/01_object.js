@@ -1,12 +1,12 @@
 /*
 object (객체)
-자바스크립트는 객체 기반 프로그래밍 언어로 원시 값을 제외한 나머지 값(함수, 배열 등)은 모두 객체이다.
-객체는 0개 이상의 프로포티로 구성된 집합이며, 프로퍼티는 key 와 value 로 구성된다.
+자바스크립트는 객체 기반 프로그래밍 언어로 원시 값(단순 값)을 제외한 나머지 값(함수, 배열 등)은 모두 객체이다.
+객체는 0개 이상의 프로퍼티로 구성된 집합이며, 프로퍼티는 key 와 value 로 구성된다.
 자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값이 될 수 있다.
 프로퍼티 값이 함수일 경우 method 라고 부른다.
 
 객체 생성 방법
-자바스크립트는 프로토타입 기반 객체지향 언어로 플래스 기반 언어와는 달리 다양한 객체 생서 방법을 지원한다.
+자바스크립트는 프로토타입 기반 객체지향 언어로 클래스 기반 언어와는 달리 다양한 객체 생성 방법을 지원한다.
 */
 
 // 객체 리터럴
@@ -36,11 +36,11 @@ let student3 ={}; // 빈 객체
 console.log(typeof student3);
 console.log(student3);
 
-class Student4 {
-    constructor(name, age){
+class Student4 { // 자바에서 봤던 것들이다. 클래스 안의 메소드들.. 
+    constructor(name, age){ // 메소드
         this.name = name;
         this.age = age;
     }
 }
 const studentA = new Student4("이순신", 30);
-console.log(studentA);
+console.log(studentA); 
