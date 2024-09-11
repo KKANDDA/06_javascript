@@ -10,5 +10,5 @@ console.log(Number(true));
 // 2. perseInt, parseFloat 함수 이용
 console.log(parseInt('10'));
 console.log(parseFloat('10'));
-console.log(parseInt('10.01')); // 소숫점 절삭
-console.log(parseFloat('10.01'));
+console.log(parseInt('10.01')); // 소숫점 이하 절삭
+console.log(parseFloat('10.01')); // 소숫점 이하 보전

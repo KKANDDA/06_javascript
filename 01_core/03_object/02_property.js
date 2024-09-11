@@ -18,6 +18,7 @@ let obj = {
 
 let key2 = 1;
 obj['11121'] = "test value"; // 대괄호를 사용하여 키를 호출했다.
+obj[key2] = "얌얌";
 obj.normal="value";
 obj['normal']="yamyam";
 

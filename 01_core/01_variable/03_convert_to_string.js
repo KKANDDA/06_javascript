@@ -20,4 +20,4 @@ console.log(undefined+'');
 console.log([]+'');
 console.log(function(){}+'');
 
-console.log(typeof(true+''));
+console.log(typeof(true+'')); // 문자열로 변환됐음을 확인해 보자!

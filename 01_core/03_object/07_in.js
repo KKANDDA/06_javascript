@@ -16,7 +16,7 @@ console.log("height" in student); // 존재 여부 확인
 
 // for in 반복문
 
-for(let key in student){
+for(let key in student){ // 키의 값들을 뽑아올 수 있다.
     console.log(`key : ${key}`);
     console.log(`student[key] : ${student[key]}`);
 }
