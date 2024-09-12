@@ -1,6 +1,6 @@
 // length 는 요소의 갯수를 나타내는 0 이상의 정수를 값으로 갖는다.
 console.log([].length);
-const arr = [1,2,3,4,5];
+const arr = [1,2,3,4,5]; 
 console.log(arr.length);
 
 // length 프로퍼티 값은 배열에 요소를 추가하거나 삭제하면 자동 갱신된다.

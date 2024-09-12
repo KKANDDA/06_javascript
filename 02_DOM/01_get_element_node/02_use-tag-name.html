@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>02. 태그 이름을 이용한 요소 노드 획득</h1>
+
+    <p>
+        Document.getElementsByTagName('태그')
+        메소드는 인수로 전달한 태그 이름을 갖는 모든 요소 노드를 탐색하여 반환한다.
+        메소드 이름의 Elements가 복수형인 것에서 알 수 있듯 여러 개의 요소 노드 객체를 갖는다.
+    </p>
+
+    <ul id="food">
+        <li>김치찌개</li>
+        <li>된장찌개</li>
+        <li>고등어구이</li>
+    </ul>
+    <ul id="drink">
+        <li>커피</li> <!--모든 태그에 class 를 쓸 수 있다. 클래스 태그를 쓰지 않으면 어떤 class에도 속하지 않은 것-->
+        <li class="li">콜라</li>
+        <li class="li">우유</li> 
+    </ul>
+
+    <script>
+        const $list = document.getElementsByTagName("li"); // li 태그들이다. // 클래스 네임은 getElementByClassName
+        $list[0].innerText="짬뽕찌개";
+        $list[0].style.color="red";
+
+        let changeClolor = 0;
+        for(let i=0; i<$list.length;i++){
+            $list[i].style.backgroundColor="rgb(130,220, "+changeClolor+")";
+            changeClolor += 50;
+        }
+
+        [...$list].forEach(list => list.style.color="blue"); // 전개 연산자. 스프레드 연산자. 자바 포이치문과 비슷. 덩어리도 취급하지 않고 하나씩 꺼내어 취급한다.
+
+        const $drink = document.getElementById("drink")
+
+        const $list2 = /*document*/$drink.getElementsByClassName("li"); // 이렇게도 가능하다.
+        [...$list2].forEach(list => list.style.color="red");
+    </script>
+
+</body>
+</html>
