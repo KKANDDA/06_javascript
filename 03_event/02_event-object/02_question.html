@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--
+        버튼 3개를 만들어서
+        1번을 누르면 안녕하세요가 빨간색으로
+        2번을 누르면 안녕하세요가 hi로 바뀌고
+        3번을 누르면 hi 라는 alert 출력된다
+    -->
+
+    <h1 id="message">안녕하세요</h1>
+    <button id="btn1">1. 누르면 "안녕하세요"가 빨개집니다.</button>
+    <button id="btn2">2. 누르면 "안녕하세요"가 영어로 바뀝니다.</button>
+    <button id="btn3">3. 누르면 알림창이 뜹니다.</button>
+
+    <script>
+
+        
+        // <h1> 태그의 아이디(message)로 노드를 상수에 담았다.
+        const $hi = document.getElementById("message");
+
+        // <button> 태그의 btn1로 노드를 상수에 담았다.
+        const $button1 = document.getElementById("btn1");
+        const handleClick1 = () => {
+            $hi.style.color = "red";
+        }; $button1.addEventListener("click", handleClick1)
+
+        const $button2 = document.getElementById("btn2");
+        const handleClick2 = () => {
+            $hi.innerHTML = "hi";
+        }; $button2.addEventListener("click", handleClick2)
+
+        const $buton3 = document.getElementById("btn3");
+        const handleClick3 = () => {alert("hi")}
+        $buton3.addEventListener("click", handleClick3)
+
+    </script>
+
+</body>
+</html>

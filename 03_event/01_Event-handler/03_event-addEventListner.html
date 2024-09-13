@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>03. addEventLisner</h1>
+
+    <pre>
+        addEventLisner 메소드를 사용하여 이벤트를 등록할 수 있다..
+
+        addEventLisner("eventType", function)
+        첫 번째 매개변수에는 이벤트 타입,
+        두 번째 매개변수에는 이벤트 핸들러를 전달한다..
+
+        동일한 html 요소에서 발생한 동일한 이벤트에 대해
+        addEventLisner 메소드 방식으로 하나 이상의 이벤트 핸들러를 등록할 수 있으며,
+        이 때 이벤트 핸들러는 등록된 순서대로 호출된다..
+    </pre>
+    <div onclick="alert('버블링')"> <!--이벤트가 상위로 자신의 부모로 전파됐다 도큐먼트까지 간다. html 보다 상위 돔 없인 html에 접근 할 수 없다.-->
+        <button id="btn">클릭해 보세요</button>
+    </div>
+    <script>
+        const $button = document.getElementById("btn");
+        $button.addEventListener('click', function(){
+            alert("클릭");
+        })
+        // 동일한 이벤트 핸들러를 등록하면 하나의 핸들러만 등록된다. // 여러개를 줄 수 있지만 
+        const handleMoudeover = () => console.log("버튼에 마우스 올림");
+        $button.addEventListener("mouseover", handleMoudeover);
+        $button.addEventListener("mouseover", handleMoudeover);
+    </script>
+</body>
+</html>

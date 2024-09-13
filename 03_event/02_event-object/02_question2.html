@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        버튼 3개를 만들어서
+        1번을 누르면 안녕하세요가 빨간색으로
+        2번을 누르면 안녕하세요가 hi로 바뀌고
+        3번을 누르면 hi 라는 alert 출력된다
+    -->
+
+    <h1 id="message">안녕하세요</h1>
+    <button onclick="colorRed()">1. 누르면 "안녕하세요"가 빨개집니다.</button>
+    <button onclick="changeEng()">2. 누르면 "안녕하세요"가 영어로 바뀝니다.</button>
+    <button onclick="alert(`hi`)">3. 누르면 알림창이 뜹니다.</button>
+
+    <script>
+        const $hi = document.getElementById("message");
+
+        function colorRed(){
+            $hi.style.color = "red";
+        }
+
+        function changeEng(){
+            $hi.innerHTML = "hi";
+        }
+        
+    </script>
+
+</body>
+</html>
