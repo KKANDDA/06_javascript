@@ -15,25 +15,47 @@
     -->
 
     <h1 id="message">안녕하세요</h1>
-    <button id="btn1">1. 누르면 "안녕하세요"가 빨개집니다.</button>
+    <button id="btn1">1. 누르면 "안녕하세요"가 <span style=color:red>빨개</span>집니다.</button>
     <button id="btn2">2. 누르면 "안녕하세요"가 영어로 바뀝니다.</button>
     <button id="btn3">3. 누르면 알림창이 뜹니다.</button>
-
+    <!-- <span style color='black'>꺼매</span>
+    <span style="color:red;">빨개</span> 자유도가 높다. -->
     <script>
-
+        
         
         // <h1> 태그의 아이디(message)로 노드를 상수에 담았다.
         const $hi = document.getElementById("message");
-
         // <button> 태그의 btn1로 노드를 상수에 담았다.
         const $button1 = document.getElementById("btn1");
+
         const handleClick1 = () => {
-            $hi.style.color = "red";
-        }; $button1.addEventListener("click", handleClick1)
+            console.log($hi.style.color);
+            if($hi.style.color === "red"){
+
+         
+
+                $button1.innerHTML = `1. 누르면 "${$hi.innerHTML}"가 <span style="color:red;">빨개</span>집니다.`
+                $hi.style.color = "black";
+            }else {
+                $button1.innerHTML = `1. 누르면 "${$hi.innerHTML}"가 <span style="color:black;"">꺼매</span>집니다.`
+                $hi.style.color = "red";
+            }
+            
+        }; 
+        $button1.addEventListener("click", handleClick1)
 
         const $button2 = document.getElementById("btn2");
         const handleClick2 = () => {
-            $hi.innerHTML = "hi";
+            if($hi.innerHTML==="hi"){
+                $hi.innerHTML = "안녕하세요";
+                $button2.innerHTML = `2. 누르면 "${$hi.innerHTML}"가 영어로 바뀝니다.`;
+                
+
+            }else {
+                $hi.innerHTML = "hi";
+                $button2.innerHTML =`2. 누르면 "${$hi.innerHTML}"가 한글로 바뀝니다.`;
+            }
+           
         }; $button2.addEventListener("click", handleClick2)
 
         const $buton3 = document.getElementById("btn3");
