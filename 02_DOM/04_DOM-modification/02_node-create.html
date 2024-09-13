@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>02. 노드 생성과 추가</h1>
+
+    <pre>
+        document.creatrElement(tagename) :
+        인수로 전달받은 텍스트 값으로 텍스트 노드를 생성하여 반환
+
+        document.createTextNode(text) : 
+        인수로 전달받은 텍스트 값으로 텍스트 노드를 생성하여 반환
+
+        document.appendChild(childNode) :
+        인수로 전달 받은 노드를 appendChild 메소드를 호출한 노드의 마지막 자식 노드로 추가
+    </pre>
+    <ul id="drink">
+        <li>커피</li>
+    </ul>
+
+    <script>
+        const $drink = document.getElementById("drink");
+        
+        const $li = document.createElement("li");
+
+        $li.textContent = "콜라";
+
+        $drink.appendChild($li);
+    </script>
+
+    <h3>복수의 노드 생성과 추가</h3>
+    <ul id="food">
+        <li>김치찌개</li>
+    </ul>
+
+    <script>
+        const $food = document.getElementById("food");
+
+        // 랜더링을 한 번에 마칠 수 있게 가상의 돔을 만드는 기술. 이 가상의 돔이 없다면 append 할 때마다 랜더링이 일어나게 되고 성능에 문제가 생길 것이다.
+        const $fragment = document.createDocumentFragment(); // createDocumentFragment 돔형식의 메모리를 만드는 행위
+        ["된장찌개", "고등어구이","제육볶음"].forEach(menu =>{
+            const $li = document.createElement("li");
+            $li.textContent = menu;
+            $fragment.appendChild($li);
+        })
+        $food.appendChild($fragment);
+    </script>
+
+</body>
+</html>
