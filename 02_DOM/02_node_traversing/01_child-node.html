@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        노드
+        DOM 에서 문서 구조으 ㅣ기본 단위를 나타낸다.
+        요소 노드 - html 태그들
+        속성 노드 - HTML 요소의 속성들
+        텍스트 노드 - HTML 요소 내의 실제 텍스트 내용
+        주석 노드  - HTML 주석
+
+    -->
+    <H1>01. 자식 노드 탐색</H1>
+    <h3>노드 탐색</h3>
+    <p>
+        요소 노드 취득 후 취득 요소 기점을 ㅗdom 트리의 노드를 옮겨 다니며 부모, 형제, 자식 노드 등을 탐색해야 할 때가 있다.
+        dom 트리 상의 노드를 탐색할 수 있도록 nod, Element 는 트리 탐색 프로퍼팅를 제공한다.
+    </p>
+
+    <h3>자식 노드 탐색</h3> <!-- 개행 문자가 텍스트 노드로 들어갔다-->
+    <ol id="node">
+        <li>
+            node.childNodes : <!--모든 모드-->
+            자식 노드를 탐색하여 nodeList에 담아 반환
+        </li>
+        <li>
+            node.firstChild :
+            첫 번때 자식 노드
+        </li>
+        <li>
+            node.lastChild :
+            마지막 자식 노드
+        </li>
+    </ol>
+
+    <script>
+        const $node = document.getElementById("node");
+        console.log($node.childNodes);
+        console.log($node.firstChild); // 개행 text 요소들이 잡히고 있다.
+        console.log($node.lastChild); // 첫 번째도 개행 마지막도 개행 노드가 잡힌다.
+    </script>
+
+    <ol id="element">
+        <li>
+            element.chidren :
+            자식 노드 중 요소 노드만 탐색하여 htmlCollection 애 담아 반환
+        </li>
+        <li>
+            element.firstElementChild : <!--엘리먼트 요소들만 가지고 있는 노드-->
+            첫 번째 자식 요소 노드 반환
+        </li>
+        <li>
+            element.lastElementChild :
+            마지막 자식 요소 노드 반환
+        </li>
+    </ol>
+
+    <script>
+        const $element = document.getElementById("element");
+        console.log($element.children);
+        console.log($element.firstElementChild);
+        console.log($element.lastElementChild);
+    </script>
+</body>
+</html>

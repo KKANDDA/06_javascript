@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>03. 형제 노드</h1>
+    <ol id="node">
+        <li>
+            node.previousSibling :
+            형제 노드 중 자신의 이전 형제 노드를 탐색하여 반환
+        </li>
+        <li>
+            node.nextSibiling :
+            형제 노드 중 자신의 다음 형제 노드를 탐색하여 반환
+        </li>
+    </ol>
+    <script>
+        const $node = document.getElementById("node");
+        
+        // 구조 분해 할당
+        const {firstChild} = $node; // === const firstChild = $node.firstChild; // 중괄호 안이 탐색할 것 // 모든 노드 중 첫 번 째라 개행이고
+        console.log(firstChild);
+
+        const {firstElementChild} = $node; // === const firstElementChild = $node.firstElementChild; // 요소 노드들 중 첫 번째라 li가 잡혔고
+        console.log(firstElementChild);
+
+        const {nextSibling} = firstChild; // === const nextSibling = firstChild.nextSibling; // 모든 노드 중 첫 번째 노드인 텍스트 노드 다음 것이라 li 가 잡혔다.
+        console.log(nextSibling);
+
+        const {previousSibling} = nextSibling; // === const previousSibling = nextSibling.previousSibling; // 그리고 다시 이전 노드로 돌아가서 다시 개행이 잡혔다.
+        console.log(previousSibling);
+
+
+    </script>
+</body>
+</html>
