@@ -14,19 +14,43 @@
     -->
 
     <h1 id="message">안녕하세요</h1>
-    <button onclick="colorRed()">1. 누르면 "안녕하세요"가 빨개집니다.</button>
-    <button onclick="changeEng()">2. 누르면 "안녕하세요"가 영어로 바뀝니다.</button>
-    <button onclick="alert(`hi`)">3. 누르면 알림창이 뜹니다.</button>
+    <button id="textColor" onclick="textColor()">1. 누르면 "안녕하세요"가 빨개집니다.</button>
+    <button onclick="changeLanguage()">2. 누르면 "안녕하세요"가 영어로 바뀝니다.</button>
+    <button onclick="popup()">3. 누르면 알림창이 뜹니다.</button>
 
     <script>
         const $hi = document.getElementById("message");
+        const $tC = document.getElementById("textColor");
+        const $tt = $hi.innerHTML;
+        const kor = "안녕하세요";
+        const eng = "hi";
 
-        function colorRed(){
-            $hi.style.color = "red";
+        function textColor(){
+        
+            if($hi.style.color === "red"){
+                console.log($hi.style.color);
+                $tC.innerHTML = `1. 누르면 "${$hi.innerHTML}"이 <span style="color:black;">꺼매</span>집니다.`;
+                $hi.style.color = "black";
+            }else{
+                console.log($hi);
+                $tC.innerHTML = `누르면 "${$hi.innerHTML}"이 <span style="color:red;">빨개</span>집니다.`;
+                $hi.style.color = "red";
+            }
+            
+        }
+    
+    
+
+        function changeLanguage(){
+            if($hi.innerHTML === kor){
+                $hi.innerHTML = eng;
+            }else{
+            $hi.innerHTML = kor;
+            }
         }
 
-        function changeEng(){
-            $hi.innerHTML = "hi";
+        function popup(){
+            alert($hi.innerHTML);
         }
         
     </script>

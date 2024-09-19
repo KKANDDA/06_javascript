@@ -31,13 +31,10 @@
         const handleClick1 = () => {
             console.log($hi.style.color);
             if($hi.style.color === "red"){
-
-         
-
                 $button1.innerHTML = `1. 누르면 "${$hi.innerHTML}"가 <span style="color:red;">빨개</span>집니다.`
                 $hi.style.color = "black";
             }else {
-                $button1.innerHTML = `1. 누르면 "${$hi.innerHTML}"가 <span style="color:black;"">꺼매</span>집니다.`
+                $button1.innerHTML = `1. 누르면 "${$hi.innerHTML}"가 <span style="color:black;">꺼매</span>집니다.`
                 $hi.style.color = "red";
             }
             
@@ -49,8 +46,6 @@
             if($hi.innerHTML==="hi"){
                 $hi.innerHTML = "안녕하세요";
                 $button2.innerHTML = `2. 누르면 "${$hi.innerHTML}"가 영어로 바뀝니다.`;
-                
-
             }else {
                 $hi.innerHTML = "hi";
                 $button2.innerHTML =`2. 누르면 "${$hi.innerHTML}"가 한글로 바뀝니다.`;
@@ -59,7 +54,7 @@
         }; $button2.addEventListener("click", handleClick2)
 
         const $buton3 = document.getElementById("btn3");
-        const handleClick3 = () => {alert("hi")}
+        const handleClick3 = () => {alert(`${$hi.innerHTML}`)}
         $buton3.addEventListener("click", handleClick3)
 
     </script>
